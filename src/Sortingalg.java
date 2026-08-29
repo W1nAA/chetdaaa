@@ -1,21 +1,21 @@
 import java.util.Arrays;
 
-public class Main {
+public class Sortingalg {
 
     public static void bubbleSort(int[] a) {
         for (int i = 0; i < a.length - 1; i++) {
-            boolean check = false;
+            boolean swap = false;
 
             for (int j = 0; j < a.length - 1 - i; j++) {
                 if (a[j] > a[j + 1]) {
                     int temp = a[j];
                     a[j] = a[j + 1];
                     a[j + 1] = temp;
-                    check = true;
+                    swap = true;
                 }
             }
 
-            if (!check) {
+            if (!swap) {
                 break;
             }
         }
@@ -23,15 +23,15 @@ public class Main {
 
     public static void insertionSort(int[] a) {
         for (int i = 1; i < a.length; i++) {
-            int num = a[i];
+            int key = a[i];
             int j = i - 1;
 
-            while (j >= 0 && a[j] > num) {
+            while (j >= 0 && a[j] > key) {
                 a[j + 1] = a[j];
                 j--;
             }
 
-            a[j + 1] = num;
+            a[j + 1] = key;
         }
     }
 
@@ -71,13 +71,10 @@ public class Main {
 
         while (i <= mid && j <= right) {
             if (a[i] < a[j]) {
-                temp[k] = a[i];
-                i++;
+                temp[k++] = a[i++];
             } else {
-                temp[k] = a[j];
-                j++;
+                temp[k++] = a[j++];
             }
-            k++;
         }
 
         while (i <= mid) {
@@ -126,24 +123,26 @@ public class Main {
 
         int[] data = {50, 20, 40, 10, 30};
 
+        System.out.println("ข้อมูลก่อนเรียง: " + Arrays.toString(data));
+
         int[] a1 = data.clone();
         bubbleSort(a1);
-        System.out.println("Bubble Sort = " + Arrays.toString(a1));
+        System.out.println("Bubble Sort:    " + Arrays.toString(a1));
 
         int[] a2 = data.clone();
         insertionSort(a2);
-        System.out.println("Insertion Sort = " + Arrays.toString(a2));
+        System.out.println("Insertion Sort: " + Arrays.toString(a2));
 
         int[] a3 = data.clone();
         selectionSort(a3);
-        System.out.println("Selection Sort = " + Arrays.toString(a3));
+        System.out.println("Selection Sort: " + Arrays.toString(a3));
 
         int[] a4 = data.clone();
         mergeSort(a4, 0, a4.length - 1);
-        System.out.println("Merge Sort = " + Arrays.toString(a4));
+        System.out.println("Merge Sort:     " + Arrays.toString(a4));
 
         int[] a5 = data.clone();
         quickSort(a5, 0, a5.length - 1);
-        System.out.println("Quick Sort = " + Arrays.toString(a5));
+        System.out.println("Quick Sort:     " + Arrays.toString(a5));
     }
 }
