@@ -1,11 +1,11 @@
 # CPE231 Laboratory 2: Experimental Performance Analysis of Sorting Algorithms
 
 ## Implemented Algorithms
-1. Bubble Sort (O(n^2))
-2. Insertion Sort (O(n^2))
-3. Selection Sort (O(n^2))
-4. Merge Sort (O(nlogn))
-5. Quick Sort (O(nlogn))
+1. Bubble Sort ($O(n^2)$)
+2. Insertion Sort ($O(n^2)$)
+3. Selection Sort ($O(n^2)$)
+4. Merge Sort ($O(n \log n)$)
+5. Quick Sort ($O(n \log n)$)
 
 ## Experimental Setup
 *   **Input Sizes (n):** 1000, 5000, 10,000, 50,000, 100,000, 200,000
